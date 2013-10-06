@@ -4,10 +4,13 @@
     <apex:form >
     <apex:pageBlock title="Search Constraints" id="Constraints">
         <apex:pageMessages />
+        <apex:outputText value="Article Type:" />
         <apex:selectList value="{!strArticleType}" size="1" required="true">
           <apex:actionSupport event="onchange" rerender="Submit"/>      
             <apex:selectOptions value="{!ArticleTypes}"/>
-        </apex:selectList>&nbsp;
+        </apex:selectList>
+        &nbsp;&nbsp;
+        <apex:outputText value="Publish Status:" />        
         <apex:selectList value="{!strPublishStatus}" size="1" required="true">
             <apex:selectOptions value="{!PublishStatus}"/>
         </apex:selectList>
@@ -21,7 +24,7 @@
         &nbsp;&nbsp;
         <apex:outputText value="Case Sensitive" />
         <apex:inputCheckbox value="{!bCaseSensitive}" /> 
-        <br/>
+        <br/><br/>
         <apex:outputText value="Replacement String:" />
         <apex:inputText id="Replace" value="{!strReplacementString}" style="width:200px" size="25" />      
                
